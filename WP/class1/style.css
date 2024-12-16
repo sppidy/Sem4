@@ -1,0 +1,21 @@
+body {
+background-color:black;
+}
+body .navbar{
+background-color:grey;
+color:white;
+}
+h1 {
+color:red;
+}
+h2 {
+color:red;
+}
+h4 {
+color:green;
+padding:0 0 0 20px
+}
+p {
+color:cyan;
+padding:0 0 0 20px;
+}
