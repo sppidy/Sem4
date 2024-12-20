@@ -1,21 +1,86 @@
+@keyframes navanimation {
+  from {
+    color: teal;
+  }
+  to {
+    color: green;
+  }
+}
 body {
-background-color:black;
+  background-color: black;
 }
-body .navbar{
-background-color:grey;
-color:white;
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  overflow: hidden;
 }
-h1 {
-color:red;
+nav a {
+  text-decoration: none;
+  padding: 10px;
+  color: white;
 }
-h2 {
-color:red;
+nav a:hover {
+  animation-name: navanimation;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+h1,h2 {
+  color: red;
 }
 h4 {
-color:green;
-padding:0 0 0 20px
+  color: green;
+  padding: 0 0 0 20px;
 }
 p {
-color:cyan;
-padding:0 0 0 20px;
+  color: cyan;
+  padding: 0 0 0 20px;
+}
+section {
+  margin: 20px;
+}
+th, td {
+  color: white;
+  width: 70%;
+}
+table{
+  width: 100%;
+}
+table, th, td {
+  border: 1px solid white;
+}
+ul {
+  color: cyan;
+  padding: 0 0 0 100px;
+}
+hr {
+  color: white;
+  padding: auto;
+}
+button {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 10%;
+  display: flex;
+  flex-direction: row;
+}
+button:hover {
+  background-color: white;
+  color: black;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+label {
+  color: white;
+}
+form .button{
+  display: flex;
+  flex-direction: row;
 }
