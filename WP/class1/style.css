@@ -84,3 +84,14 @@ form .button{
   display: flex;
   flex-direction: row;
 }
+#sometitle {
+  color: red;
+}
+legend {
+  color: white;
+}
+#current{
+  border: 1px solid white;
+  color: turquoise;
+  border-radius: 15%;
+}

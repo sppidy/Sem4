@@ -4,44 +4,64 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <title>BioData</title>
+  <title>BioData : Form</title>
 </head>
 <body>
   <nav>
     <a href="index.html">Home</a>
     <a href="MyExperience.html">My Experience</a>
     <a href="EduQualification.html">Educational Qualification</a>
-    <a href="form.html">Form</a>
+    <a href="form.html" id="current" aria-disabled="true">Form</a>
   </nav>
     <h1>Form</h1>
     <p>Fill the form below</p>
-    <form method="post">
-      <input type="text" placeholder="Name" required><br>
-      <input type="text" placeholder="Email" required><br>
-      <input type="text" placeholder="Phone" required><br>
-      <input type="text" placeholder="Address" required><br>
-      <label>Gender</label><br>
-      <label>
-        <input type="radio" name="gender" value="male"required> Male
-      </label><br>
-      <label>
-        <input type="radio" name="gender" value="female"> Female
-      </label><br>
-      <label>Hobbies</label><br>
-      <label>
-        <input type="checkbox" name="hobbies" value="reading" required> Reading
-      </label><br>
-      <label>
-        <input type="checkbox" name="hobbies" value="writing"> Writing
-      </label><br>
-      <label>
-        <input type="checkbox" name="hobbies" value="coding"> Coding
-      </label><br>
-      <label>
-        <input type="checkbox" name="hobbies" value="gaming"> Gaming
-      </label><br>
-      <button type="submit" id="submit">Submit</button>
-      <button type="reset" id="reset">Reset</button>
+    <form method="post" action="/submit.php" oninput="phone.setCustomValidity(phone.validity.patternMismatch ? 'Enter a valid phone number' : '');">
+      <fieldset>
+        <legend>Personalia:</legend>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" placeholder="John"autofocus required><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" placeholder="Doe"required<br><br>
+        <label for="mail">Email:</label><br>
+        <input type="text" id="mail" placeholder="abc@gmail.com" required><br><br>
+        <label for="phone">Phone:</label><br>
+        <input type="text" id="phone" name="phno" placeholder="1234567890" required minlength="10" maxlength="10" pattern=[0-9]{10}><br><br>
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" required><br><br>
+        <label for="address">Address:</label><br>
+        <input type="textarea" id="address" placeholder="123, 5th Avenue, NewYork" height="23" required><br><br>
+        <label id="sometitle">Gender</label><br>
+        <label>
+          <input type="radio" name="gender" value="male"required> Male
+        </label><br>
+        <label>
+          <input type="radio" name="gender" value="female"> Female
+        </label><br><br>
+        <label id="sometitle">Hobbies</label><br>
+        <label>
+          <input type="checkbox" name="hobbies" value="reading" > Reading
+        </label><br>
+        <label>
+          <input type="checkbox" name="hobbies" value="writing"> Writing
+        </label><br>
+        <label>
+          <input type="checkbox" name="hobbies" value="coding"> Coding
+        </label><br>
+        <label>
+          <input type="checkbox" name="hobbies" value="gaming"> Gaming
+        </label><br><br>
+        <label for="browsers">Fav Browser:</label><br>
+        <input list="browsers" placeholder="Choose your browser" required>
+        <datalist id="browsers">
+          <option value="Edge">
+          <option value="Firefox">
+          <option value="Chrome">
+          <option value="Opera">
+          <option value="Safari">
+        </datalist><br><br>
+        <input type="reset" value="Reset">
+        <input type="submit" formenctype="application/x-www-form-urlencoded" value="Submit">
+      </fieldset>
     </form>
   </body>
 </html>

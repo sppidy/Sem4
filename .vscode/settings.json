@@ -1,5 +1,6 @@
 {
     "files.associations": {
         "ostream": "cpp"
-    }
+    },
+    "livePreview.defaultPreviewPath": "/WP/class1/index.html"
 }
