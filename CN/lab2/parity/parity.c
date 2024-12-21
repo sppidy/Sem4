@@ -1,72 +1,144 @@
-#include <stdio.h>
-
-int main() {
-    int n, choice;
-
-    // Input the number of data bits
-    printf("Enter the number of data bits: ");
-    scanf("%d", &n);
-    if (n <= 0) {
-        printf("Invalid number of bits.\n");
-        return 1;
+#include<stdio.h>
+void gettrans(char code[],char trans[],char par,int n){
+    for(int i=0;i<n;i++){
+        trans[i]=code[i];
     }
-
-    int data[n];
-    printf("Enter the data bits (0 or 1): ");
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &data[i]);
-        if (data[i] != 0 && data[i] != 1) {
-            printf("Invalid input. Only 0 or 1 allowed.\n");
-            return 1;
+    trans[n]=par;
+}
+int main(){
+    int n;
+    printf("Enter length of bit code : ");
+    scanf("%d",&n);
+    char code[n];
+    printf("Enter bit code : ");
+    scanf("%s",code);
+    int ch1,ch2;
+    printf("Enter choice of parity (even=1,odd=2) and (1 or 0) : ");
+    scanf("%d %d",&ch1,&ch2);
+    char trans[n+1];
+    if(ch2==1){
+        if(ch1==1){
+            int c=0;
+            for(int i=0;i<n;i++){
+                if(code[i]=='1')  c++;
+            }
+            if(c%2==0){
+                gettrans(code,trans,'0',n);
+            }
+            else{
+                gettrans(code,trans,'1',n);
+            }
+        }
+        else if(ch1==2){
+            int c=0;
+            for(int i=0;i<n;i++){
+                if(code[i]=='1')  c++;
+            }
+            if(c%2!=0){
+                gettrans(code,trans,'0',n);
+            }
+            else{
+                gettrans(code,trans,'1',n);
+            }
+        }
+        else{
+            printf("Invalid Choice");
         }
     }
-
-    printf("1. Even Parity\n2. Odd Parity\nEnter your choice: ");
-    scanf("%d", &choice);
-    if (choice != 1 && choice != 2) {
-        printf("Invalid choice.\n");
-        return 1;
-    }
-
-    int count_ones = 0;
-    for (int i = 0; i < n; i++) {
-        if (data[i] == 1) {
-            count_ones++;
+    else if(ch2==0){
+        if(ch1==1){
+            int c=0;
+            for(int i=0;i<n;i++){
+                if(code[i]=='0')  c++;
+            }
+            if(c%2==0){
+                gettrans(code,trans,'1',n);
+            }
+            else{
+                gettrans(code,trans,'0',n);
+            }
+        }
+        else if(ch1==2){
+            int c=0;
+            for(int i=0;i<n;i++){
+                if(code[i]=='0')  c++;
+            }
+            if(c%2!=0){
+                gettrans(code,trans,'1',n);
+            }
+            else{
+                gettrans(code,trans,'0',n);
+            }
+        }
+        else{
+            printf("Invalid Choice");
         }
     }
-
-    int parity_bit = (choice == 1) ? (count_ones % 2) : !(count_ones % 2);
-
-    printf("Generated data with parity bit: ");
-    for (int i = 0; i < n; i++) {
-        printf("%d", data[i]);
+    printf("%s",trans);
+   
+    char rec[n+1];
+    printf("Enter Recieved data : ");
+    scanf("%s",rec);
+    if(trans[n]!=rec[n]){
+        printf("Error");
     }
-    printf("%d\n", parity_bit);
-
-    int received_data[n + 1];
-    printf("Enter the received data with parity bit: ");
-    for (int i = 0; i < n + 1; i++) {
-        scanf("%d", &received_data[i]);
-        if (received_data[i] != 0 && received_data[i] != 1) {
-            printf("Invalid input. Only 0 or 1 allowed.\n");
-            return 1;
+    else{
+        if(ch2==1){
+            if(ch1==1){
+                int c=0;
+                for(int i=0;i<n+1;i++){
+                    if(rec[i]=='1')  c++;
+                }
+                if(c%2==0){
+                    printf("No Error");
+                }
+                else{
+                    printf("Error");
+                }
+            }
+            else if(ch1==2){
+                int c=0;
+                for(int i=0;i<n+1;i++){
+                    if(rec[i]=='1')  c++;
+                }
+                if(c%2!=0){
+                    printf("No Error");
+                }
+                else{
+                    printf("Error");
+                }
+            }
+            else{
+                printf("Invalid Choice");
+            }
         }
+        else if(ch2==0){
+            if(ch1==1){
+                int c=0;
+                for(int i=0;i<n+1;i++){
+                    if(rec[i]=='0')  c++;
+                }
+                if(c%2==0){
+                    printf("No Error");
+                }
+                else{
+                    printf("Error");
+                }
+            }
+            else if(ch1==2){
+                int c=0;
+                for(int i=0;i<n+1;i++){
+                    if(rec[i]=='0')  c++;
+                }
+                if(c%2!=0){
+                    printf("No Error");
+                }
+                else{
+                    printf("Error");
+                }
+            }
+            else{
+                printf("Invalid Choice");
+            }
     }
-
-    count_ones = 0;
-    for (int i = 0; i < n; i++) {
-        if (received_data[i] == 1) {
-            count_ones++;
-        }
-    }
-
-    int recalculated_parity = (choice == 1) ? (count_ones % 2) : !(count_ones % 2);
-
-    if (recalculated_parity == received_data[n]) {
-        printf("Data accepted: No error.\n");
-    } else {
-        printf("Error detected in the data.\n");
-    }
-
-    return 0;
 }
