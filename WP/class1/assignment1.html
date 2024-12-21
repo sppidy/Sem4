@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Assignment 1</title>
+</head>
+<body id="assignment1">
+    <h1 id="as1h1">Project Management</h1>
+    <form id="as1form" method="post" action="/submit.php">
+        <fieldset id="assignment1fs">
+            <table id="assignment1table">
+                <tr class="as1tr">
+                    <td class="as1td"><label class="as1" for="pname">Project name&emsp;</label></td>
+                    <td class="as1td"><input type="text" id="pname" name="pname" placeholder="Project Name" autofocus required></td>
+                </tr>
+                <tr class="as1tr">
+                    <td class="as1td"><label class="as1" for="ppls">Assigned to&emsp;</label></td>
+                    <td class="as1td">
+                        <select id="ppls" name="ppls" required>
+                            <option value="Er Merry Petision">Er Merry Petision</option>
+                            <option value="John Doe">John Doe</option>
+                            <option value="Sam C">Sam C</option>
+                            <option value="John Smith">John Smith</option>
+                            <option value="Alex">Alex</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="as1tr">
+                    <td class="as1td"><label class="as1" for="psdate">Start Date&emsp;</label></td>
+                    <td class="as1td"><input type="date" id="psdate" required></td>
+                </tr>
+                <tr class="as1tr">
+                    <td class="as1td"><label class="as1" for="pedate">End Date&emsp;</label></td>
+                    <td class="as1td"><input type="date" id="pedate" required></td>
+                </tr>
+                <tr class="as1tr">
+                    <td class="as1td"><label class="as1" for="ppriority">Priority&emsp;</label></td>
+                    <td class="as1td">
+                        <input type="radio" id="high" name="ppriority" value="High" required>
+                        <label class="as1" for="high">High </label>
+                        <input type="radio" id="medium" name="ppriority" value="Medium">
+                        <label class="as1" for="medium">Medium </label>
+                        <input type="radio" id="low" name="ppriority" value="Low">
+                        <label class="as1" for="low">Low </label>
+                    </td>
+                </tr>
+                <tr class="as1tr">
+                    <td class="as1td"><label class="as1" for="pdesc">Description&emsp;</label></td>
+                    <td class="as1td"><textarea id="pdesc" placeholder="Project Description" rows="4" required></textarea></td>
+                </tr>
+                <tr class="as1tr">
+                    <td class="as1td" colspan="2">
+                        <input type="reset" value="Clear">
+                        <input type="submit" formenctype="application/x-www-form-urlencoded" value="Submit">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>

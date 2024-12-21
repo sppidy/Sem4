@@ -43,10 +43,13 @@ section {
 }
 th, td {
   color: white;
-  width: 70%;
+  border-style: hidden;
+  /* width: 70%; */
 }
-table{
-  width: 100%;
+ table{
+  width: 50%;
+  text-align: center;
+  border-style: hidden;
 }
 table, th, td {
   border: 1px solid white;
@@ -94,4 +97,47 @@ legend {
   border: 1px solid white;
   color: turquoise;
   border-radius: 15%;
+}
+#table{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+#assignment1{
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#assignment1fs{
+  color:black;
+  background-color: turquoise;
+}
+.as1{
+  color: black;
+}
+#assignment1form .button{
+  flex-direction: row;
+}
+#as1h1{
+  color: black;
+  text-decoration: underline;
+}
+#assignment1table{
+  text-align: left;
+  border-style: none;
+  border-collapse: collapse;
+  width: 50%;
+}
+.as1tr{
+  border-style: none;
+  width: 50%;
+}
+.as1td{
+  border-style: none;
+  width: 20%;
 }
