@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="astyle.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>Assignment 1</title>
 </head>
 <body id="assignment1">
     <h1 id="as1h1">Project Management</h1>
-    <form id="as1form" method="post" action="/submit.php">
+    <form class="as1form" method="post" action="/submit.php">
         <fieldset id="assignment1fs">
             <table id="assignment1table">
                 <tr class="as1tr">
-                    <td class="as1td"><label class="as1" for="pname">Project name&emsp;</label></td>
-                    <td class="as1td"><input type="text" id="pname" name="pname" placeholder="Project Name" autofocus required></td>
+                    <td class="as1td" colspan="1"><label class="as1" for="pname">ProjectName&emsp;</label></td>
+                    <td class="as1td" colspan="1"><input type="text" id="pname" name="pname" placeholder="Project Name" autofocus required></td>
                 </tr>
                 <tr class="as1tr">
                     <td class="as1td"><label class="as1" for="ppls">Assigned to&emsp;</label></td>
@@ -29,31 +29,33 @@
                 </tr>
                 <tr class="as1tr">
                     <td class="as1td"><label class="as1" for="psdate">Start Date&emsp;</label></td>
-                    <td class="as1td"><input type="date" id="psdate" required></td>
+                    <td class="as1td"><input type="date" id="psdate" name="psdate" required></td>
                 </tr>
                 <tr class="as1tr">
                     <td class="as1td"><label class="as1" for="pedate">End Date&emsp;</label></td>
-                    <td class="as1td"><input type="date" id="pedate" required></td>
+                    <td class="as1td"><input type="date" id="pedate" name="pedate" required></td>
                 </tr>
                 <tr class="as1tr">
                     <td class="as1td"><label class="as1" for="ppriority">Priority&emsp;</label></td>
-                    <td class="as1td">
-                        <input type="radio" id="high" name="ppriority" value="High" required>
-                        <label class="as1" for="high">High </label>
-                        <input type="radio" id="medium" name="ppriority" value="Medium">
-                        <label class="as1" for="medium">Medium </label>
-                        <input type="radio" id="low" name="ppriority" value="Low">
-                        <label class="as1" for="low">Low </label>
+                    <td class="as1td" colspan="10">
+                        <div class="radio-group">
+                            <input type="radio" id="high" name="ppriority" value="High" required>
+                            <label class="as1" for="high">High </label>
+                            <input type="radio" id="medium" name="ppriority" value="Medium">
+                            <label class="as1" for="medium">Medium </label>
+                            <input type="radio" id="low" name="ppriority" value="Low">
+                            <label class="as1" for="low">Low </label>
+                        </div>
                     </td>
                 </tr>
                 <tr class="as1tr">
-                    <td class="as1td"><label class="as1" for="pdesc">Description&emsp;</label></td>
-                    <td class="as1td"><textarea id="pdesc" placeholder="Project Description" rows="4" required></textarea></td>
+                    <td class="as1td"><label class="as1" for="pdesc">Description&ensp;</label></td>
+                    <td class="as1td"><textarea id="pdesc" name="pdesc" placeholder="Project Description" rows="4" required></textarea></td>
                 </tr>
                 <tr class="as1tr">
-                    <td class="as1td" colspan="2">
-                        <input type="reset" value="Clear">
-                        <input type="submit" formenctype="application/x-www-form-urlencoded" value="Submit">
+                    <td class="as1button" colspan="2">
+                        <input type="submit" id="button1" formenctype="application/x-www-form-urlencoded" value="Submit">
+                        <input type="reset" id="button2" value="Clear">
                     </td>
                 </tr>
             </table>

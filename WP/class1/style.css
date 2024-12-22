@@ -120,24 +120,77 @@ legend {
 .as1{
   color: black;
 }
-#assignment1form .button{
+#as1form .button{
   flex-direction: row;
+
 }
 #as1h1{
   color: black;
   text-decoration: underline;
 }
-#assignment1table{
-  text-align: left;
+.as1table{
+  text-align: top;
   border-style: none;
-  border-collapse: collapse;
-  width: 50%;
+  width: auto;
+  align-items: top ;
+  border: none;
+  /* align-self: ; */
 }
 .as1tr{
+  border: none;
   border-style: none;
   width: 50%;
+  -webkit-column-span: all;
+  column-span: all;
+  vertical-align: top;
+  text-align: left;
+  padding: 10px;
 }
 .as1td{
+  border:none;
   border-style: none;
   width: 20%;
+  -webkit-column-span: all;
+  column-span: all;
+  vertical-align: top;
+  text-align: left;
+  padding: 10px;
+
+}
+.as1button{
+  color: white;
+  padding: 10px;
+  border-style: none;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  
+}
+.radio-group{
+  display: flex;
+  flex-direction: row;
+}
+/* .as1form{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  row-gap: 15px;
+  column-gap: 10px;
+  max-width: 500px;
+} */
+.asformm{
+  border:none;
+}
+#button1{
+  background-color:#33D439;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10%;
+}
+#button2{
+  background-color: #547EF3;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10%;
 }
