@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <title>BioData : Form</title>
+  <script src="/submit.js"></script>
 </head>
 <body>
   <nav>
@@ -15,7 +16,7 @@
   </nav>
     <h1>Form</h1>
     <p>Fill the form below</p>
-    <form id="assignment1form" method="post" action="/submit.php" oninput="phone.setCustomValidity(phone.validity.patternMismatch ? 'Enter a valid phone number' : '');">
+    <form id="myForm" method="post" oninput="phone.setCustomValidity(phone.validity.patternMismatch ? 'Enter a valid phone number' : '');">
       <fieldset>
         <legend>Personalia:</legend>
         <label for="fname">First name:</label><br>
