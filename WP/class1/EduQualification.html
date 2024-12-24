@@ -3,41 +3,55 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <title>BioData : EduQualification</title>
+  <title>BioData: Educational Qualification</title>
 </head>
 
-<body id="table">
+<body>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="MyExperience.html">My Experience</a>
-    <a href="EduQualification.html" id="current">Educational Qualification</a>
-    <a href="form.html">Form</a>
+    <div class="logo">
+      <img src="logo.png" alt="logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="MyExperience.html">My Experience</a></li>
+      <li><a href="EduQualification.html"id="current">Edu. Qual.</a></li>
+      <li><a href="form.html">Form</a></li>
+      <li><a href="assignments.html">Assignments</a></li>
+    </ul>
   </nav>
-  <h1>Educational Qualification</h1>
-  <table>
-    <tr>
-      <th>Sl.No</th>
-      <th>Class</th>
-      <th>Marks</th>
-    </tr>
-    <tr>
-      <td>1.</td>
-      <td>10th</td>
-      <td>400/500</td>
-    </tr>
-    <tr>
-      <td>2.</td>
-      <td>12th</td>
-      <td>410/500</td>
-    </tr>
-    <tr>
-      <td>3.</td>
-      <td>Bachelor's Degree</td>
-      <td>ongoing</td>
-    </tr>
-  </table>
+
+  <main>
+    <h1>Educational Qualification</h1>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Sl.No</th>
+          <th scope="col">Class</th>
+          <th scope="col">Marks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.</td>
+          <td>10th</td>
+          <td>400/500</td>
+        </tr>
+        <tr>
+          <td>2.</td>
+          <td>12th</td>
+          <td>410/500</td>
+        </tr>
+        <tr>
+          <td>3.</td>
+          <td>Bachelor's Degree</td>
+          <td>Ongoing</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
 </body>
 
 </html>

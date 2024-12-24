@@ -1,196 +1,160 @@
-@keyframes navanimation {
-  from {
-    color: teal;
-  }
-  to {
-    color: green;
-  }
-}
-body {
+html, body {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
   background-color: black;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 nav {
   display: flex;
-  justify-content: center;
-  background-color: black;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 20px;
   color: white;
-  overflow: hidden;
+  margin-top: 25px;
 }
-nav a {
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.logo img {
+  width: 40px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: white;
   text-decoration: none;
-  padding: 10px;
-  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
-nav a:hover {
-  animation-name: navanimation;
-  animation-duration: 4s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: 1;
+
+.nav-links li a:hover {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-color: green;
+  text-decoration-style: dotted;
 }
-h1,h2 {
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+h1, h2 {
   color: red;
 }
+
 h4 {
   color: green;
-  padding: 0 0 0 20px;
 }
+
 p {
   color: cyan;
-  padding: 0 0 0 20px;
 }
+
 section {
   margin: 20px;
 }
-th, td {
-  color: white;
-  border-style: hidden;
-  /* width: 70%; */
-}
- table{
+
+table {
   width: 50%;
   text-align: center;
-  border-style: hidden;
+  border-collapse: collapse;
 }
-table, th, td {
+
+th, td {
+  color: white;
   border: 1px solid white;
 }
+
 ul {
   color: cyan;
-  padding: 0 0 0 100px;
 }
+
 hr {
   color: white;
-  padding: auto;
+  width: 50%;
 }
+
 button {
   background-color: black;
   color: white;
   padding: 10px;
   border: 1px solid white;
   border-radius: 10%;
-  display: flex;
-  flex-direction: row;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
+
 button:hover {
   background-color: white;
   color: black;
 }
+
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 label {
   color: white;
 }
-form .button{
+
+form .button {
   display: flex;
   flex-direction: row;
 }
+
 #sometitle {
   color: red;
 }
+
 legend {
   color: white;
 }
-#current{
-  border: 1px solid white;
-  color: turquoise;
-  border-radius: 15%;
-}
-#table{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* margin-left: auto;
-  margin-right: auto; */
-}
-#assignment1{
-  background-color: white;
-  color: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-#assignment1fs{
-  color:black;
-  background-color: turquoise;
-}
-.as1{
-  color: black;
-}
-#as1form .button{
-  flex-direction: row;
-
-}
-#as1h1{
-  color: black;
+#current {
   text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-color: red;
+  text-decoration-style: dashed;
 }
-.as1table{
-  text-align: top;
-  border-style: none;
-  width: auto;
-  align-items: top ;
-  border: none;
-  /* align-self: ; */
-}
-.as1tr{
-  border: none;
-  border-style: none;
-  width: 50%;
-  -webkit-column-span: all;
-  column-span: all;
-  vertical-align: top;
-  text-align: left;
-  padding: 10px;
-}
-.as1td{
-  border:none;
-  border-style: none;
-  width: 20%;
-  -webkit-column-span: all;
-  column-span: all;
-  vertical-align: top;
-  text-align: left;
-  padding: 10px;
 
-}
-.as1button{
-  color: white;
-  padding: 10px;
-  border-style: none;
-  flex-direction: row;
-  align-items: center;
-  text-align: center;
-  
-}
-.radio-group{
+#table {
   display: flex;
-  flex-direction: row;
-}
-/* .as1form{
-  display: grid;
-  grid-template-columns: auto 1fr;
-  row-gap: 15px;
-  column-gap: 10px;
-  max-width: 500px;
-} */
-.asformm{
-  border:none;
-}
-#button1{
-  background-color:#33D439;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 10%;
-}
-#button2{
-  background-color: #547EF3;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 10%;
+  flex-direction: column;
+  align-items: center;
 }

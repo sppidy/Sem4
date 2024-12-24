@@ -1,46 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <title>BioData : Form</title>
-  <script src="/submit.js"></script>
+  <script src="submit.js"></script>
 </head>
+
 <body>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="MyExperience.html">My Experience</a>
-    <a href="EduQualification.html">Educational Qualification</a>
-    <a href="form.html" id="current" aria-disabled="true">Form</a>
+    <div class="logo">
+      <img src="logo.png" alt="logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="MyExperience.html">My Experience</a></li>
+      <li><a href="EduQualification.html">Edu. Qual.</a></li>
+      <li><a href="form.html" id="current">Form</a></li>
+      <li><a href="assignments.html">Assignments</a></li>
+    </ul>
   </nav>
+  <div class="content-wrapper">
     <h1>Form</h1>
     <p>Fill the form below</p>
-    <form id="myForm" method="post" oninput="phone.setCustomValidity(phone.validity.patternMismatch ? 'Enter a valid phone number' : '');">
+    <form id="myForm" method="post"
+      oninput="phone.setCustomValidity(phone.validity.patternMismatch ? 'Enter a valid phone number' : '');">
       <fieldset>
         <legend>Personalia:</legend>
         <label for="fname">First name:</label><br>
-        <input type="text" id="fname" name="fname" placeholder="John"autofocus required><br>
+        <input type="text" id="fname" name="fname" placeholder="John" autofocus required><br>
         <label for="lname">Last name:</label><br>
-        <input type="text" id="lname" name="lname" placeholder="Doe"required<br><br>
+        <input type="text" id="lname" name="lname" placeholder="Doe" required<br><br>
         <label for="mail">Email:</label><br>
         <input type="text" id="mail" placeholder="abc@gmail.com" required><br><br>
         <label for="phone">Phone:</label><br>
-        <input type="text" id="phone" name="phno" placeholder="1234567890" required minlength="10" maxlength="10" pattern=[0-9]{10}><br><br>
+        <input type="text" id="phone" name="phno" placeholder="1234567890" required minlength="10" maxlength="10"
+          pattern=[0-9]{10}><br><br>
         <label for="dob">Date of Birth:</label><br>
         <input type="date" id="dob" required><br><br>
         <label for="address">Address:</label><br>
         <input type="textarea" id="address" placeholder="123, 5th Avenue, NewYork" height="23" required><br><br>
         <label id="sometitle">Gender</label><br>
         <label>
-          <input type="radio" name="gender" value="male"required> Male
+          <input type="radio" name="gender" value="male" required> Male
         </label><br>
         <label>
           <input type="radio" name="gender" value="female"> Female
         </label><br><br>
         <label id="sometitle">Hobbies</label><br>
         <label>
-          <input type="checkbox" name="hobbies" value="reading" > Reading
+          <input type="checkbox" name="hobbies" value="reading"> Reading
         </label><br>
         <label>
           <input type="checkbox" name="hobbies" value="writing"> Writing
@@ -64,5 +75,7 @@
         <input type="submit" formenctype="application/x-www-form-urlencoded" value="Submit">
       </fieldset>
     </form>
-  </body>
+  </div>
+</body>
+
 </html>
