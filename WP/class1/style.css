@@ -1,7 +1,20 @@
+html {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+[data-theme="light"] {
+  --color-bg: #ffffff;
+  --color-fg: #000000;
+}
+
+[data-theme="dark"] {
+  --color-bg: #000000;
+  --color-fg: #ffffff;
+}
 html, body {
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
-  background-color: black;
+  background-color: var(--color-bg);
   margin: 0;
   padding: 0;
   height: 100%;
@@ -16,10 +29,10 @@ body {
 
 nav {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  color: white;
+  color: var(--color-fg);
   margin-top: 25px;
 }
 
@@ -43,7 +56,7 @@ nav {
 }
 
 .nav-links li a {
-  color: white;
+  color: var(--color-fg);
   text-decoration: none;
   padding: 5px 10px;
   border-radius: 5px;
@@ -81,7 +94,7 @@ h4 {
 }
 
 p {
-  color: cyan;
+  color: lightblue;
 }
 
 section {
@@ -95,32 +108,32 @@ table {
 }
 
 th, td {
-  color: white;
-  border: 1px solid white;
+  color: var(--color-fg);
+  border: 1px solid var(--color-fg);
 }
 
 ul {
-  color: cyan;
+  color: lightblue;
 }
 
 hr {
-  color: white;
+  color: var(--color-fg);
   width: 50%;
 }
 
 button {
-  background-color: black;
-  color: white;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
   padding: 10px;
-  border: 1px solid white;
+  border: none;
   border-radius: 10%;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
 
 button:hover {
-  background-color: white;
-  color: black;
+  background-color: var(--color-fg);
+  color: var(--color-bg);
 }
 
 form {
@@ -130,7 +143,7 @@ form {
 }
 
 label {
-  color: white;
+  color: var(--color-fg);
 }
 
 form .button {
@@ -143,7 +156,7 @@ form .button {
 }
 
 legend {
-  color: white;
+  color: var(--color-fg);
 }
 
 #current {
@@ -159,7 +172,7 @@ legend {
   align-items: center;
 }
 .content-wrapper li a{
-  color: cyan;
+  color: lightblue;
   text-decoration: underline;
   text-decoration-style: dashed;
   text-decoration-color: hotpink;

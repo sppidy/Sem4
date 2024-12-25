@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <title>BioData : Experiences</title>
+  <script defer src="script.js"></script>
 </head>
 
 <body>
@@ -17,9 +17,41 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="MyExperience.html">My Experience</a></li>
       <li><a href="EduQualification.html">Edu. Qual.</a></li>
-      <li><a href="form.html">Form</a></li>
+      <li><a href="form.html" id="current">Form</a></li>
       <li><a href="assignments.html" id="current">Assignments</a></li>
-    </ul>
+    </ul>    
+    <button type="button" data-theme-toggle aria-label="Change to light theme">
+      <!-- Sun Icon -->
+      <svg width="30" height="30" id="light-icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+        <!-- Central circle -->
+        <circle cx="15" cy="15" r="6" fill="currentColor" />
+        <!-- Rays -->
+        <line
+          id="ray"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          x1="15" y1="1" x2="15" y2="4"
+        ></line>
+        <use href="#ray" transform="rotate(45 15 15)" />
+        <use href="#ray" transform="rotate(90 15 15)" />
+        <use href="#ray" transform="rotate(135 15 15)" />
+        <use href="#ray" transform="rotate(180 15 15)" />
+        <use href="#ray" transform="rotate(225 15 15)" />
+        <use href="#ray" transform="rotate(270 15 15)" />
+        <use href="#ray" transform="rotate(315 15 15)" />
+      </svg>
+      <!-- Moon Icon -->
+      <svg width="30" height="30" id="dark-icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill="currentColor"
+          d="
+            M 23, 5
+            A 12 12 0 1 0 23, 25
+            A 12 12 0 0 1 23, 5"
+        />
+      </svg>
+    </button>
   </nav>
   <div class="content-wrapper">
     <h1>Assignments</h1>

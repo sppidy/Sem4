@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <title>BioData : Form</title>
-  <script src="submit.js"></script>
+  <script defer src="submit.js"></script>
+  <script defer src="script.js"></script>
 </head>
 
 <body>
@@ -20,28 +20,60 @@
       <li><a href="EduQualification.html">Edu. Qual.</a></li>
       <li><a href="form.html" id="current">Form</a></li>
       <li><a href="assignments.html">Assignments</a></li>
-    </ul>
+    </ul>    
+    <button type="button" data-theme-toggle aria-label="Change to light theme">
+      <!-- Sun Icon -->
+      <svg width="30" height="30" id="light-icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+        <!-- Central circle -->
+        <circle cx="15" cy="15" r="6" fill="currentColor" />
+        <!-- Rays -->
+        <line
+          id="ray"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          x1="15" y1="1" x2="15" y2="4"
+        ></line>
+        <use href="#ray" transform="rotate(45 15 15)" />
+        <use href="#ray" transform="rotate(90 15 15)" />
+        <use href="#ray" transform="rotate(135 15 15)" />
+        <use href="#ray" transform="rotate(180 15 15)" />
+        <use href="#ray" transform="rotate(225 15 15)" />
+        <use href="#ray" transform="rotate(270 15 15)" />
+        <use href="#ray" transform="rotate(315 15 15)" />
+      </svg>
+      <!-- Moon Icon -->
+      <svg width="30" height="30" id="dark-icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill="currentColor"
+          d="
+            M 23, 5
+            A 12 12 0 1 0 23, 25
+            A 12 12 0 0 1 23, 5"
+        />
+      </svg>
+    </button>
   </nav>
   <div class="content-wrapper">
     <h1>Form</h1>
     <p>Fill the form below</p>
     <form id="myForm" method="post"
-      oninput="phone.setCustomValidity(phone.validity.patternMismatch ? 'Enter a valid phone number' : '');">
+oninput="phone.setCustomValidity(phone.validity.patternMismatch ? 'Enter a valid phone number' : '');">
       <fieldset>
         <legend>Personalia:</legend>
         <label for="fname">First name:</label><br>
         <input type="text" id="fname" name="fname" placeholder="John" autofocus required><br>
         <label for="lname">Last name:</label><br>
-        <input type="text" id="lname" name="lname" placeholder="Doe" required<br><br>
+        <input type="text" id="lname" name="lname" placeholder="Doe" required><br><br>
         <label for="mail">Email:</label><br>
-        <input type="text" id="mail" placeholder="abc@gmail.com" required><br><br>
+        <input type="email" id="mail" placeholder="abc@gmail.com" required><br><br>
         <label for="phone">Phone:</label><br>
         <input type="text" id="phone" name="phno" placeholder="1234567890" required minlength="10" maxlength="10"
-          pattern=[0-9]{10}><br><br>
+pattern="[0-9]{10}"><br><br>
         <label for="dob">Date of Birth:</label><br>
         <input type="date" id="dob" required><br><br>
         <label for="address">Address:</label><br>
-        <input type="textarea" id="address" placeholder="123, 5th Avenue, NewYork" height="23" required><br><br>
+        <textarea id="address" placeholder="123, 5th Avenue, NewYork" rows="3" required></textarea><br><br>
         <label id="sometitle">Gender</label><br>
         <label>
           <input type="radio" name="gender" value="male" required> Male
