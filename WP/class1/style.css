@@ -158,3 +158,9 @@ legend {
   flex-direction: column;
   align-items: center;
 }
+.content-wrapper li a{
+  color: cyan;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-decoration-color: hotpink;
+}
