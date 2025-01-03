@@ -3,9 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: Arial, sans-serif;
   background-color: #f7f7f7;
   padding: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
 #assignment1fs {
@@ -13,7 +13,7 @@
   color: black;
   border: 2px solid #37411c;
   border-radius: 10px;
-  padding: 20px;
+  padding: 50px;
   width: 80%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -28,25 +28,50 @@
 label.as1 {
   font-weight: bold;
   margin-right: 10px;
+  max-width: 70%;
+  max-lines: 1;
+  margin-trim: 0;
+  text-align: top;
+  text-wrap: nowrap;
 }
 
-input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea {
-  width: calc(100% - 20px);
+input[type="text"], input[type="email"], input[type="tel"], input[type="number"] {
+  /* width: calc(100% - 20px); */
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  /* margin-left: 10px; */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  flex-wrap:wrap-reverse;
+  /* align-content: flex-end; */
+  /* justify-self: flex-end; */
+  justify-items:left;
+  box-sizing: border-box;
+}
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="number"]::placeholder {
+  color: #999;
+  font-size: 16px;
+  text-align: left;
+}
+
+textarea {
+  resize: vertical;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
 }
 
-textarea {
-  resize: none;
-}
-
 .radio-group {
   display: flex;
   flex-direction: row;
-  gap: 20px;
-  align-items: center;
+  /* gap: 20px; */
+  /* align-items: center; */
 }
 
 .radio-group input[type="radio"] {
@@ -78,6 +103,14 @@ input:focus, textarea:focus {
   outline: none;
   border-color: #a0bc2c;
   box-shadow: 0 0 5px rgba(160, 188, 44, 0.5);
+}
+
+.as1tr, .as11tr {
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid #37411c;
+  background-color: #727e43;
+  padding: 10px;
 }
 
 @media (max-width: 768px) {
