@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="a2style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Assignment 2</title>
+    <script src="as2submit.js"></script>
+</head>
+<body id="assignment1">
+    <form class="as1form" id="as1form" method="post">
+        <fieldset id="assignment1fs">
+            <div id="step1">
+                <h3>Step 1: Your Details</h3>
+                <section class="as1tr">
+                    <label class="as1" for="name">Name&emsp;</label>
+                    <input type="text" id="name" name="name" placeholder="First and last name" required autofocus>
+                </section>
+                <section class="as1tr">
+                    <label class="as1" for="email">Email&emsp;</label>
+                    <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+                </section>
+                <section class="as1tr">
+                    <label class="as1" for="phone">Phone&emsp;</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Eg: +4450000000000" required>
+                </section>
+            </div>
+
+            <div id="step2">
+                <h3>Step 2: Delivery Address</h3>
+                <section class="as1tr">
+                    <label class="as1" for="address">Address&ensp;</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                </section>
+                <section class="as1tr">
+                    <label class="as1" for="postcode">Post Code&emsp;</label>
+                    <input type="text" id="postcode" name="postcode" required>
+                </section>
+                <section class="as1tr">
+                    <label class="as1" for="country">Country&emsp;</label>
+                    <input type="text" id="country" name="country" required>
+                </section>
+            </div>
+
+            <div id="step3">
+                <h3>Step 3: Card Details</h3>
+                <section class="as11tr">
+                    <label class="as1" for="ppriority">Card Type&emsp;</label><br>
+                    <div class="radio-group">
+                        <input type="radio" id="visa" name="ppriority" value="visa" required>
+                        <label class="as1" for="visa">Visa</label>
+                        <input type="radio" id="amex" name="ppriority" value="amex">
+                        <label class="as1" for="amex">Amex</label>
+                        <input type="radio" id="mc" name="ppriority" value="mc">
+                        <label class="as1" for="mc">Mastercard</label>
+                    </div>
+                </section>
+                <section class="as1tr">
+                    <label class="as1" for="cardnumber">Card Number&emsp;</label>
+                    <input type="text" id="cardnumber" name="cardnumber" required>
+                </section>
+                <section class="as1tr">
+                    <label class="as1" for="scode">Security Code&emsp;</label>
+                    <input type="number" id="scode" name="scode" required>
+                </section>
+                <section class="as1tr">
+                    <label class="as1" for="cname">Name on card&emsp;</label>
+                    <input type="text" id="cname" name="cname" placeholder="Exact name as on the card" required>
+                </section>
+            </div>
+
+            <section class="as1button">
+                <input type="submit" id="button1" formenctype="application/x-www-form-urlencoded" value="Buy Now!">
+            </section>
+        </fieldset>
+    </form>
+</body>
+</html>
