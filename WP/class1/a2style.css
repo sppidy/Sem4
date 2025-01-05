@@ -30,9 +30,8 @@ label.as1 {
   margin-right: 10px;
   max-width: 70%;
   max-lines: 1;
-  margin-trim: 0;
   text-align: top;
-  text-wrap: nowrap;
+  white-space: nowrap;
 }
 
 input[type="text"], input[type="email"], input[type="tel"], input[type="number"] {
