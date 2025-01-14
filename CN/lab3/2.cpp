@@ -4,6 +4,7 @@
 void calculateParityBits1962(int data[], int n, int hammingCode[]) {
     int r = 0;
 
+    // Calculate the number of parity bits needed
     while ((1 << r) < (n + r + 1)) {
         r++;
     }
@@ -11,13 +12,14 @@ void calculateParityBits1962(int data[], int n, int hammingCode[]) {
     int j = 0;
     for (int i = 1; i <= n + r; i++) {
         if ((i & (i - 1)) == 0) {
-            hammingCode[i - 1] = 0;
+            hammingCode[i - 1] = 0; // Initialize parity bits to 0
         } else {
             hammingCode[i - 1] = data[j];
             j++;
         }
     }
 
+    // Calculate parity bits
     for (int i = 0; i < r; i++) {
         int parityPos = 1 << i;
         int parity = 0;
@@ -26,7 +28,7 @@ void calculateParityBits1962(int data[], int n, int hammingCode[]) {
                 parity ^= hammingCode[j - 1];
             }
         }
-        hammingCode[parityPos - 1] = parity;
+        hammingCode[parityPos - 1] = parity; // Set the calculated parity bit
     }
 }
 
@@ -52,6 +54,9 @@ int main() {
     printf("Number of parity bits: %d\n", r);
     
     int hammingCode[n + r];
+    for (int i = 0; i < n + r; i++) {
+        hammingCode[i] = 0; // Initialize the Hamming code array
+    }
 
     encodeHamming1962(data, n, hammingCode);
     printf("Encoded data with parity bits (MSB to LSB): ");
@@ -60,13 +65,9 @@ int main() {
     }
     printf("\n");
 
-    printf("r1 r2 r4 r8");
-    
-    printf("\n");
-    for (int i = 0; i < n + r; i++) {
-        if (i == 0 || i == 1 || i == 3 || i == 7) {
-            printf("r%d = %d\n", i, hammingCode[i]);
-        }
+    printf("Parity bits (r1, r2, r4, r8):\n");
+    for (int i = 0; i < r; i++) {
+        printf("r%d = %d\n", (1 << i), hammingCode[(1 << i) - 1]);
     }
     printf("\n");
 
