@@ -24,12 +24,13 @@ void crc(){
         for(j=0;j<N-1;j++)  
             check_value[j]=check_value[j+1];  
         check_value[j]=data[i++];  
+        printf("Partial remainder: %s\n", check_value);
     }while(i<=data_length+N-1);  
 }  
 void receiver() {  
     printf("\nEnter the received data: ");  
     scanf("%s", data);  
-    printf("Data received: %s", data);  
+    printf("Data received: %s\n", data);  
     crc();  
    
     printf("\nCRC: %s\n", check_value);  
@@ -58,5 +59,5 @@ int main()
         data[i]=check_value[i-data_length];  
     printf("\nCodeword: %s\n",data);  
     receiver();  
-        return 0;  
+    return 0;  
 }
