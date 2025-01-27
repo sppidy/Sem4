@@ -1,152 +1,211 @@
-<html>
-    <head>
-        <title>Assignment 4</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/x-icon" href="favicon.ico">
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Registration Form</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-image: url('background.jpg');
-            background-size: cover;
-            background-attachment: fixed;
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
         }
+
         header {
-            background-color: #333;
-            color: white;
+            background-color: #1e293b;
+            color: #fff;
             text-align: center;
-            padding: 1em;
+            padding: 1em 0;
             position: sticky;
             top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         main {
             display: flex;
             justify-content: center;
+            align-items: center;
             flex: 1;
-            padding: 1em;
+            padding: 2em;
         }
+
         footer {
-            background-color: #333;
+            background-color: #1e293b;
             color: white;
             text-align: center;
             padding: 1em;
+            font-size: 0.9em;
         }
+
+        /* Form Styles */
         form {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-gap: 1em;
-            background-color: rgba(255, 255, 255, 0.8);
+            background: #ffffff;
             padding: 2em;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
         }
+
         fieldset {
-            border: 1px solid #333;
-            padding: 1em;
+            border: 2px solid #1e293b;
+            padding: 1.5em;
+            border-radius: 10px;
         }
+
         legend {
-            background-color: #333;
-            color: white;
-            padding: 0.5em;
+            background-color: #1e293b;
+            color: #fff;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            font-weight: bold;
         }
+
         label {
+            font-weight: bold;
+            margin-top: 1em;
             display: block;
-            margin-bottom: 0.5em;
-            overflow: hidden;
         }
+
         input, textarea, select {
             width: 100%;
-            padding: 0.5em;
-            margin-bottom: 1em;
-            border: 1px solid #ccc;
+            padding: 0.8em;
+            margin-top: 0.5em;
+            border: 1px solid #cbd5e1;
             border-radius: 5px;
+            box-sizing: border-box;
+            transition: border 0.3s ease;
         }
-        input[type="submit"], button {
-            background-color: #333;
+
+        input:focus, textarea:focus, select:focus {
+            border: 1px solid #1e293b;
+            outline: none;
+            box-shadow: 0 0 5px rgba(30, 41, 59, 0.3);
+        }
+
+        .inline {
+            display: flex;
+            align-items: center;
+            gap: 0.5em; 
+            margin-top: 0.5em;
+        }
+        
+        .inline input[type="radio"], 
+        .inline input[type="checkbox"] {
+            width: auto;
+            height: auto;
+            margin: 0;
+        }
+        
+        .inline label {
+            font-weight: normal;
+            margin: 0;
+        }
+        
+        button {
+            background-color: #1e293b;
             color: white;
             border: none;
-            padding: 0.5em 1em;
-            cursor: pointer;
+            padding: 0.8em 1.5em;
+            margin: 1em 0;
             border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s ease;
         }
-        input[type="submit"]:hover, button:hover {
-            background-color: #555;
+
+        button:hover {
+            background-color: #374151;
         }
-        .inline {
-            display: inline-block;
-            margin-right: 0;
+
+        button[type="reset"] {
+            background-color: #64748b;
+        }
+
+        button[type="reset"]:hover {
+            background-color: #475569;
         }
     </style>
-    <body>
-        <div id="header">
-            <header>
-                <h1>Appointment Registration Form</h1>
-                <p>Fill out the form below to register for an appointment</p>
-            </header>
-        </div>
-        <main>
-            <form>
-                <fieldset>
-                    <legend>Appointment Information</legend>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="address">Address:</label>
-                    <textarea id="address" name="address" required></textarea>
-                    <label for="phone">Phone:</label>
-                    <input type="tel" id="phone" name="phone" required>
-                    <label for="date">Date:</label>
-                    <input type="date" id="date" name="date" required>
-                    <label for="time">Time:</label>
-                    <input type="time" id="time" name="time" required>
-                    <label>Doctor</label>
-                    <div class="inline">
-                        <input type="radio" id="doctor1" name="doctor" value="doctor1">
-                        <label for="doctor1">Doctor 1</label>
-                    </div>
-                    <div class="inline">
-                        <input type="radio" id="doctor2" name="doctor" value="doctor2">
-                        <label for="doctor2">Doctor 2</label>
-                    </div>
-                    <div class="inline">
-                        <input type="radio" id="doctor3" name="doctor" value="doctor3">
-                        <label for="doctor3">Doctor 3</label>
-                    </div>
-                    <label>Symptom</label>
-                    <div class="inline">
-                        <input type="checkbox" id="symptom1" name="symptom" value="symptom1">
-                        <label for="symptom1">Symptom 1</label>
-                    </div>
-                    <div class="inline">
-                        <input type="checkbox" id="symptom2" name="symptom" value="symptom2">
-                        <label for="symptom2">Symptom 2</label>
-                    </div>
-                    <div class="inline">
-                        <input type="checkbox" id="symptom3" name="symptom" value="symptom3">
-                        <label for="symptom3">Symptom 3</label>
-                    </div>
-                    <label for="TypeofDisease">Type of Disease</label>
-                    <select id="TypeofDisease" name="type_of_disease" required>
-                        <option value="TypeofDisease1">Type of Disease 1</option>
-                        <option value="TypeofDisease2">Type of Disease 2</option>
-                        <option value="TypeofDisease3">Type of Disease 3</option>
-                    </select>
-                </fieldset>
-                <section>
-                    <button type="reset">Reset</button>
-                    <button type="submit">Submit</button>
-                </section>
-            </form>
-        </main>
-        <footer>
-            &copy; 2025 Spidy&reg;&TRADE;;
-        </footer>
-    </body>
+</head>
+<body>
+    <header>
+        <h1>Appointment Registration Form</h1>
+        <p>Fill out the form below to register for an appointment</p>
+    </header>
+    <main>
+        <form>
+            <fieldset>
+                <legend>Appointment Information</legend>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="3" placeholder="Enter your address" required></textarea>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+
+                <label>Doctor:</label>
+                <div class="inline">
+                    <input type="radio" id="doctor1" name="doctor" value="doctor1">
+                    <label for="doctor1">Doctor 1</label>
+                </div>
+                <div class="inline">
+                    <input type="radio" id="doctor2" name="doctor" value="doctor2">
+                    <label for="doctor2">Doctor 2</label>
+                </div>
+                <div class="inline">
+                    <input type="radio" id="doctor3" name="doctor" value="doctor3">
+                    <label for="doctor3">Doctor 3</label>
+                </div>
+
+                <label>Symptoms:</label>
+                <div class="inline">
+                    <input type="checkbox" id="symptom1" name="symptom" value="symptom1">
+                    <label for="symptom1">Symptom 1</label>
+                </div>
+                <div class="inline">
+                    <input type="checkbox" id="symptom2" name="symptom" value="symptom2">
+                    <label for="symptom2">Symptom 2</label>
+                </div>
+                <div class="inline">
+                    <input type="checkbox" id="symptom3" name="symptom" value="symptom3">
+                    <label for="symptom3">Symptom 3</label>
+                </div>
+
+                <label for="TypeofDisease">Type of Disease:</label>
+                <select id="TypeofDisease" name="type_of_disease" required>
+                    <option value="TypeofDisease1">Type of Disease 1</option>
+                    <option value="TypeofDisease2">Type of Disease 2</option>
+                    <option value="TypeofDisease3">Type of Disease 3</option>
+                </select>
+            </fieldset>
+
+            <section>
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </section>
+        </form>
+    </main>
+    <footer>
+        &copy; 2025 Spidy&reg;
+    </footer>
+</body>
 </html>
