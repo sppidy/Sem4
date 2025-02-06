@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="cssanim.css">
+        <style>
+            .container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            }
+            .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            animation: dance 2s infinite;
+            animation-direction: alternate-reverse;
+            }
+            @keyframes dance {
+            0% {
+                left: 0;
+                top: 0;
+                background-color: red;
+            }
+            25% {
+                left: 50%;
+                top: 25%;
+                background-color: blue;
+            }
+            50% {
+                left: 75%;
+                top: 50%;
+                background-color: green;
+            }
+            75% {
+                left: 25%;
+                top: 75%;
+                background-color: yellow;
+            }
+            100% {
+                left: 0;
+                top: 0;
+                background-color: red;
+            }
+            }
+        </style>
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    </head>
+    <body>
+        <div class="container">
+            <div class="box"></div>
+        </div>
+    </body>
+</html>
