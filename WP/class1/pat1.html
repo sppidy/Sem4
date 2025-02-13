@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtHub - Online Art Gallery</title>
+    <link rel="stylesheet" href="pat1.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#submit">Submit Artwork</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#articles">Articles</a></li>
+        </ul>
+    </nav>
+
+    <!-- Homepage with Slideshow -->
+    <section id="home">
+        <h1>Welcome to ArtHub</h1>
+        <div class="slideshow">
+            <img src="./images/3.jpg" alt="Artwork 1">
+            <img src="./images/4.jpg" alt="Artwork 2">
+            <img src="./images/6.jpg" alt="Artwork 3">
+        </div>
+    </section>
+
+    <!-- Artwork Submission Form -->
+    <section id="submit">
+        <h2>Submit Your Artwork</h2>
+        <form>
+            <label for="name">Artist Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="title">Artwork Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="category">Category:</label>
+            <select id="category" name="category">
+                <option value="painting">Painting</option>
+                <option value="sculpture">Sculpture</option>
+                <option value="digital">Digital Art</option>
+            </select>
+
+            <label for="medium">Medium:</label>
+            <input type="text" id="medium" name="medium">
+
+            <label for="date">Creation Date:</label>
+            <input type="date" id="date" name="date">
+
+            <label for="color">Background Color:</label>
+            <input type="color" id="color" name="color">
+
+            <label>
+                <input type="checkbox" name="forsale">
+                Available for Sale
+            </label>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Artwork Display Section -->
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="artwork">
+            <img src="images/Dubai.jpg" alt="Sample Art">
+            <p><strong>Title:</strong> Sample Art</p>
+            <p><strong>Artist:</strong> John Doe</p>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles">
+        <h2>Art Articles</h2>
+        <article>
+            <h3>Understanding Abstract Art</h3>
+            <p>Discover the beauty and meaning behind abstract art...</p>
+            <a href="#">Read More</a>
+        </article>
+        <article>
+            <h3>Famous Paintings and Their Stories</h3>
+            <p>Explore the history behind some of the world’s most famous paintings...</p>
+            <a href="#">Read More</a>
+        </article>
+    </section>
+</body>
+<footer style="text-align: center;">
+    <p>&copy; 2025-26 ArtHub. All rights reserved.</p>
+</footer>
+</html>
