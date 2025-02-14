@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coffee Shop - Marketing Foundation</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h1 { color: #6b4226; }
+    .receipt { border: 1px solid #ccc; padding: 15px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Coffee Shop - Marketing Foundation</h1>
+  <button onclick="calculateOrder()">Order Coffee</button>
+  <div class="receipt" id="receipt"></div>
+
+  <script>
+    function calculateOrder() {
+      const regularQty = parseInt(prompt("How many bags of Regular coffee ($9 each)?")) || 0;
+      const decafQty = parseInt(prompt("How many bags of Decaffeinated coffee ($8 each)?")) || 0;
+      const mochaQty = parseInt(prompt("How many bags of Mocha coffee ($11 each)?")) || 0;
+
+      const regularTotal = regularQty * 9;
+      const decafTotal = decafQty * 8;
+      const mochaTotal = mochaQty * 11;
+      
+      let totalAmount = regularTotal + decafTotal + mochaTotal;
+      let discount = 0;
+
+      if (totalAmount > 100) {
+        discount = 15;
+        totalAmount -= discount;
+      }
+
+      document.getElementById("receipt").innerHTML = `
+        <h2>Receipt</h2>
+        <p>Regular Coffee: ${regularQty} bags - $${regularTotal}</p>
+        <p>Decaffeinated Coffee: ${decafQty} bags - $${decafTotal}</p>
+        <p>Mocha Coffee: ${mochaQty} bags - $${mochaTotal}</p>
+        ${discount > 0 ? `<p>Discount: -$${discount}</p>` : ""}
+        <h3>Total Amount: $${totalAmount}</h3>
+      `;
+    }
+  </script>
+</body>
+</html>
