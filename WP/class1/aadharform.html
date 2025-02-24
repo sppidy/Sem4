@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AADHAR Card Application Form</title>
+    <style>
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+            display: none;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>AADHAR Card Application Form</h2>
+        <form id="aadharForm" onsubmit="return validateForm(event)">
+            <div class="form-group">
+                <label>Resident Status:</label>
+                <select name="residentStatus" id="residentStatus" required>
+                    <option value="resident">Resident Indian</option>
+                    <option value="non-resident">Non-Resident Indian</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+                <span class="error" id="fullNameError">Name should be 5-20 characters</span>
+            </div>
+
+            <div class="form-group">
+                <label>Gender:</label>
+                <input type="radio" name="gender" value="male" required> Male
+                <input type="radio" name="gender" value="female"> Female
+                <input type="radio" name="gender" value="transgender"> Transgender
+            </div>
+
+            <div class="form-group">
+                <label>Date of Birth (MM/DD/YYYY):</label>
+                <input type="date" id="dob" name="dob" required>
+                <span class="error" id="dobError">Please enter a valid date</span>
+            </div>
+
+            <div class="form-group">
+                <label>Address:</label>
+                <input type="text" id="address1" name="address1" placeholder="Line 1" required><br>
+                <input type="text" id="address2" name="address2" placeholder="Line 2"><br>
+                <input type="text" id="address3" name="address3" placeholder="Line 3">
+                <span class="error" id="addressError">Total address should not exceed 50 characters</span>
+            </div>
+
+            <div class="form-group">
+                <label>Father's Name:</label>
+                <input type="text" id="fatherName" name="fatherName" required>
+                <span class="error" id="fatherNameError">Name should be 5-20 characters</span>
+            </div>
+
+            <div class="form-group">
+                <label>Mother's Name:</label>
+                <input type="text" id="motherName" name="motherName" required>
+                <span class="error" id="motherNameError">Name should be 5-20 characters</span>
+            </div>
+
+            <div class="form-group">
+                <label>Type of Proof Submitted:</label>
+                <select name="proofType" id="proofType" required>
+                    <option value="">Select Proof Type</option>
+                    <option value="driving">Driving License</option>
+                    <option value="election">Election ID</option>
+                    <option value="ration">Ration Card</option>
+                </select>
+                <input type="text" id="proofId" name="proofId" placeholder="Document ID" required>
+                <span class="error" id="proofIdError">Invalid Document ID format</span>
+            </div>
+
+            <div class="form-group">
+                <label>Mobile Number:</label>
+                <input type="text" id="mobile" name="mobile" required>
+                <span class="error" id="mobileError">Enter a valid 10-digit number</span>
+            </div>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            let isValid = true;
+
+            // Reset error messages
+            document.querySelectorAll('.error').forEach(error => error.style.display = 'none');
+
+            // Full Name validation
+            const fullName = document.getElementById('fullName').value;
+            if (fullName.length < 5 || fullName.length > 20) {
+                document.getElementById('fullNameError').style.display = 'block';
+                isValid = false;
+            }
+
+            // Date of Birth validation
+            const dob = document.getElementById('dob').value;
+            if (!dob) {
+                document.getElementById('dobError').style.display = 'block';
+                isValid = false;
+            }
+
+            // Address validation
+            const address1 = document.getElementById('address1').value;
+            const address2 = document.getElementById('address2').value;
+            const address3 = document.getElementById('address3').value;
+            const totalAddress = address1 + address2 + address3;
+            if (totalAddress.length > 50) {
+                document.getElementById('addressError').style.display = 'block';
+                isValid = false;
+            }
+
+            // Father's Name validation
+            const fatherName = document.getElementById('fatherName').value;
+            if (fatherName.length < 5 || fatherName.length > 20) {
+                document.getElementById('fatherNameError').style.display = 'block';
+                isValid = false;
+            }
+
+            // Mother's Name validation
+            const motherName = document.getElementById('motherName').value;
+            if (motherName.length < 5 || motherName.length > 20) {
+                document.getElementById('motherNameError').style.display = 'block';
+                isValid = false;
+            }
+
+            // Proof validation
+            const proofType = document.getElementById('proofType').value;
+            const proofId = document.getElementById('proofId').value;
+            const proofIdError = document.getElementById('proofIdError');
+
+            if (proofType && proofId) {
+                switch(proofType) {
+                    case 'driving':
+                        // 10-15 alphanumeric characters
+                        if (!/^[a-zA-Z0-9]{10,15}$/.test(proofId)) {
+                            proofIdError.textContent = 'Driving License should be 10-15 alphanumeric characters';
+                            proofIdError.style.display = 'block';
+                            isValid = false;
+                        }
+                        break;
+                    case 'election':
+                        // 10 characters starting with 3 letters
+                        if (!/^[A-Za-z]{3}[0-9]{7}$/.test(proofId)) {
+                            proofIdError.textContent = 'Election ID should be 3 letters followed by 7 numbers';
+                            proofIdError.style.display = 'block';
+                            isValid = false;
+                        }
+                        break;
+                    case 'ration':
+                        // 12 numeric digits
+                        if (!/^\d{12}$/.test(proofId)) {
+                            proofIdError.textContent = 'Ration Card should be 12 numeric digits';
+                            proofIdError.style.display = 'block';
+                            isValid = false;
+                        }
+                        break;
+                    default:
+                        proofIdError.textContent = 'Please select a proof type';
+                        proofIdError.style.display = 'block';
+                        isValid = false;
+                }
+            }
+
+            // Mobile Number validation
+            const mobile = document.getElementById('mobile').value;
+            const mobileRegex = /^\d{10}$/;
+            if (!mobileRegex.test(mobile)) {
+                document.getElementById('mobileError').style.display = 'block';
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert('Form submitted successfully!');
+                document.getElementById('aadharForm').reset();
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+</html>

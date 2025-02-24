@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Performance Evaluation</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { width: 50%; margin: auto; text-align: center; }
+        input, button { margin: 5px; padding: 8px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid black; padding: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Employee Performance Evaluation</h2>
+        <form id="performanceForm">
+            <label>Employee ID:</label>
+            <input type="text" id="empId" required><br>
+
+            <label>Target Achieved (5 Pts):</label>
+            <input type="number" id="target" min="0"><br>
+
+            <label>Quality of Output (10 Pts):</label>
+            <input type="number" id="quality" min="0"><br>
+
+            <label>Adherence to Deadlines (20 Pts):</label>
+            <input type="number" id="deadlines" min="0"><br>
+
+            <label>Interaction with Team (5 Pts):</label>
+            <input type="number" id="interaction" min="0"><br>
+
+            <label>Attendance (10 Pts):</label>
+            <input type="number" id="attendance" min="0"><br>
+
+            <button type="button" onclick="addEmployee()">Add Employee</button>
+        </form>
+
+        <h3>Performance Statistics</h3>
+        <p id="stats"></p>
+
+        <h3>Scores Above & Below Average</h3>
+        <p id="aboveBelowStats"></p>
+    </div>
+
+    <script>
+        let employees = [];
+
+        function addEmployee() {
+            let empId = document.getElementById("empId").value;
+            let target = parseInt(document.getElementById("target").value) || 0;
+            let quality = parseInt(document.getElementById("quality").value) || 0;
+            let deadlines = parseInt(document.getElementById("deadlines").value) || 0;
+            let interaction = parseInt(document.getElementById("interaction").value) || 0;
+            let attendance = parseInt(document.getElementById("attendance").value) || 0;
+
+            let totalScore = (target * 5) + (quality * 10) + (deadlines * 20) + (interaction * 5) + (attendance * 10);
+            
+            employees.push({ empId, totalScore });
+            updateStats();
+        }
+
+        function updateStats() {
+            if (employees.length === 0) return;
+
+            let scores = employees.map(emp => emp.totalScore);
+            let minScore = Math.min(...scores);
+            let maxScore = Math.max(...scores);
+            let avgScore = scores.reduce((a, b) => a + b, 0) / scores.length;
+
+            let aboveAvg = employees.filter(emp => emp.totalScore > avgScore);
+            let belowAvg = employees.filter(emp => emp.totalScore <= avgScore);
+
+            document.getElementById("stats").innerHTML = `
+                Lowest Score: ${minScore} <br>
+                Highest Score: ${maxScore} <br>
+                Average Score: ${avgScore.toFixed(2)}
+            `;
+
+            document.getElementById("aboveBelowStats").innerHTML = `
+                Employees Above Average: ${aboveAvg.length} <br>
+                Employees Below Average: ${belowAvg.length}
+            `;
+        }
+    </script>
+</body>
+</html>
